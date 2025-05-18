@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="timer.css">
+</head>
+
+<body>
+  <div class="ship" id="ship"></div>
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="big-wave" id="big-wave"></div>
+  </div>
+  <div class="storm" id="storm"></div>
+  <div class="timeout-display" id="timeout-display">TIME OUT!</div>
+
+  <div class="timer-container">
+    <h1>Pomodoro Timer</h1>
+
+    <div class="mode-switch">
+      <button data-mode="pomodoro" class="active">Pomodoro</button>
+      <button data-mode="short">Short Break</button>
+      <button data-mode="long">Long Break</button>
+    </div>
+
+    <div class="time-display" id="time-display">25:00</div>
+
+    <div class="controls">
+      <button id="start-pause">Start</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+
+  <button class="settings-btn" id="settings-btn">⚙️</button>
+
+  <div class="settings-panel" id="settings-panel">
+    <h3>Timer Settings</h3>
+    <div class="setting-group">
+      <label for="pomodoro-time">Pomodoro (minutes):</label>
+      <input type="number" id="pomodoro-time" min="1" max="120" value="25">
+    </div>
+    <div class="setting-group">
+      <label for="short-time">Short Break (minutes):</label>
+      <input type="number" id="short-time" min="1" max="30" value="5">
+    </div>
+    <div class="setting-group">
+      <label for="long-time">Long Break (minutes):</label>
+      <input type="number" id="long-time" min="1" max="60" value="15">
+    </div>
+    <button class="save-settings" id="save-settings">Save Settings</button>
+  </div>
+
+  <audio id="alarm-sound" src="audio/alarm-beep.mp3"></audio>
+  <audio id="wave-sound" src="audio/ocean-beach-waves-332383.mp3" loop></audio>
+  <audio id="storm-sound" src="audio/thunder-338046.mp3"></audio>
+  <audio id="crash-sound" src="audio/wooden-ship-break-85277.mp3"></audio>
+
+<script src="timer.js"></script>
+
+</body>
+
+</html>
